@@ -25,7 +25,8 @@ We are given a docker instance to connect to and some files to help us beat the 
 Using the 'file' command in linux, we can see that `janken` is an ELF file
 
 ```
-janken: ELF 64-bit LSB pie executable, x86-64
+janken: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter ./.glibc/ld-linux-x86-64.so.2, BuildID[sha1]=56b54cdae265aa352fe2ebb016f86af831fd58d3, for GNU/Linux 3.2.0, not stripped
+
 ```
 Running the file locally we are greeted with the following output:
 
