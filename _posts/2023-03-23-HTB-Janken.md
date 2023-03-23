@@ -137,6 +137,7 @@ First, let's go over the imports:
 
 *   `pwn` was used to import pwntools to connect to the server for exploiting
 *   `CDLL` from `ctypes` was used to import functions from the C-codebase
+
 ###### [](#Note2)`context.log_level='debug'` is not an import, but is used in conjunction with pwn to debug server connection if needed
 
 Next...
