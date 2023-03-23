@@ -5,7 +5,7 @@ published: true
 
 This writeup will walk you through how to solve the Challenge `Misc - Janken` from Hack The Box's 2023 Cyber Apocalypse CTF!
 
-## [](#header-1)Challenge Overview
+## [](#Challenge-Overview)Challenge Overview
 
 ![image](https://user-images.githubusercontent.com/101006959/227324103-28c7da9a-7d2b-426f-87db-4db5e314800a.png)
 
@@ -14,7 +14,7 @@ We can also see that the game will be similar to the well known game: rock, pape
 
 We are given a docker instance to connect to and some files to help us beat the guru.
 
-### [](#header-3)files:
+### [](#files)files:
 
 - flag.txt
 - janken
@@ -88,10 +88,11 @@ srand((uint)tVar2);
 iVar1 = rand();
 ```
 
+### [](#code-breakdown)Code Breakdown
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+> `tVar2` is set to the current time in seconds (also known as unix time)
+> `srand((uint)tVar2);` will set the seed for the `rand()` function based on the unix time
+> Finally `iVar1 = rand();` will return a random number based on the current `srand()` seed
 
 ### [](#header-3)Header 3
 
