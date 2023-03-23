@@ -40,7 +40,7 @@ From here we can see the basic rules of rock, paper, scissors; and the requireme
 
 Let's first try `ℙ ∟ ₳ Ұ`ing the game and see what happens.
 
-![image](https://user-images.githubusercontent.com/101006959/227383660-352fc74e-5558-430a-a1ce-2a920ae91444.png)
+![image](https://user-images.githubusercontent.com/101006959/227383970-2c5dda68-2be8-46d4-a969-2495749bf402.png)
 
 For this example, we chose `rock` , and the guru chose `rock`. The program doesn't seem to consider ties and from that we can assume that we have to win 
 every round, no ties or losses, for 100 rounds in a row.
