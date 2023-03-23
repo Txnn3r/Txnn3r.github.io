@@ -5,19 +5,12 @@ published: true
 
 This writeup will walk you through how to solve the Challenge `Misc - Janken` from Hack The Box's 2023 Cyber Apocalypse CTF!
 
-Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
-
-[Link to another page](https://ctf.umasscybersec.org/team).
-
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
 ## [](#header-1)Challenge Overview
 
 ![image](https://user-images.githubusercontent.com/101006959/227324103-28c7da9a-7d2b-426f-87db-4db5e314800a.png)
 
-To start: From the desciption of the challenge we can see that there
+To start: From the desciption of `Janken` we can see that the goal of thoal of the challenge is to beat the guru 100 times in a row at the game.
+We can also see that the game will be similar to the well known game: rock, paper, scissors.
 
 ## [](#header-2)Header 2
 
