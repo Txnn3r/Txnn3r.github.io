@@ -79,7 +79,15 @@ Double clicking on the `game()` function will open the decompiled version of `ga
 
 ![image](https://user-images.githubusercontent.com/101006959/227369816-7dfaeca5-c882-46dd-9eea-a413a231e8cf.png)
 
-Looking at the variables in the first `fprintf()` statement, we can see that the guru's choice comes from `local_78` and our choice comes from `local_38`. We can also see that `local_78` has 3 options as expected: rock, paper, and scissors. 
+Looking at the variables in the first `fprintf()` statement, we can see that the guru's choice comes from `local_78` and our choice comes from `local_38`. We can also see that `local_78` has 3 options as expected: rock, paper, and scissors. One thing to take note of is what decides which choice the guru makes `iVar1 % 3`
+
+`iVar1` gets assigned through the following code in the function:
+```c
+tVar2 = time((time_t *)0x0);
+srand((uint)tVar2);
+iVar1 = rand();
+```
+
 
 > This is a blockquote following a header.
 >
