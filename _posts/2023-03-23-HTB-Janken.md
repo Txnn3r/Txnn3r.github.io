@@ -53,22 +53,27 @@ how the guru decides which value he will pick.
 
 A little background: [Ghidra](https://ghidra-sre.org/) is a free and open source tool created by the NSA in order to read binaries and attempt to decompile the assembly back into source code.
 
-First, you will want to open Ghidra, select a folder to work in, and the go to `File > Import File > janken` to import the binary into Ghidra. 
+First, you will want to open Ghidra, select a folder to work in, and the go to\ `File > Import File > janken` to import the binary into Ghidra. 
 
 Next, double click on the file `janken` and a picture of a dragon will pop up on your screen before opening the Ghidra CodeBrowser.
 
 ![image](https://user-images.githubusercontent.com/101006959/227357297-edb8cbc4-b32c-4dee-91d7-53bdb8b337d2.png)
 
-Alternatively, you can click on the dragon icon after first opening Ghidra and go to `File > Import File > janken` to open the file from within the CodeBrowser.
+Alternatively, you can click on the dragon icon after first opening Ghidra and go to\ `File > Import File > janken` to open the file from within the CodeBrowser.
 
 When first opening a binary, Ghidra will ask you if you would like to analyze the file, click `Yes` and then `Analyze`.
 
 You should be greeted with a `Listing` of the assembly code, as well as a list of `Functions`. If you do not see the `Functions` tab, you can go to `Window > Functions` to view the different functions of the `janken` file.
 
-Let's try viewing the main function in Ghidra and see if we can figure out what the game does & how he makes his choice.
+Let's try viewing the main function in Ghidra and see if we can figure out what the game does & how the guru makes his choice.
 
 ![image](https://user-images.githubusercontent.com/101006959/227349063-2a76377c-ced7-4cd0-8a26-5734e4b5d644.png)
 
+Typing `main` into the Filter bar we can see 2 functions returned, double clicking on the one named `main` will bring up Ghidra's attempt to decompile the main function.
+
+###### [](#Note)Note: It is important to know note that the Ghidra Decompiler may not always be 100% correct, so make sure to consult your assembly code to verify!
+
+From the `Decompile: main` tab, we can see lots of different variables and functions, but the one that I took notice of almost immediatly was `game()`. We can see that it is inside a loop that itterates by 1 and ends at 100, so this is likely our "100 rounds"!
 
 > This is a blockquote following a header.
 >
