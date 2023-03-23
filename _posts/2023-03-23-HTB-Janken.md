@@ -75,6 +75,12 @@ Typing `main` into the Filter bar we can see 2 functions returned, double clicki
 
 From the `Decompile: main` tab, we can see lots of different variables and functions, but the one that I took notice of almost immediatly was `game()`. We can see that it is inside a loop that itterates by 1 and ends at 100, so this is likely our "100 rounds"!
 
+Double clicking on the `game()` function will open the decompiled version of `game()` and we can try to take a look at how the guru makes his choice.
+
+![image](https://user-images.githubusercontent.com/101006959/227369816-7dfaeca5-c882-46dd-9eea-a413a231e8cf.png)
+
+Looking at the variables in the first `fprintf()` statement, we can see that the guru's choice comes from `local_78` and our choice comes from `local_38`. We can also see that `local_78` has 3 options as expected: rock, paper, and scissors. 
+
 > This is a blockquote following a header.
 >
 > When something is important enough, you do it even if the odds are not in your favor.
