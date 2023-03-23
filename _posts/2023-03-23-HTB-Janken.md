@@ -44,7 +44,7 @@ Let's first try `ℙ ∟ ₳ Ұ`ing the game and see what happens.
 For this example, we chose `rock` , and the guru chose `rock`. The program doesn't seem to consider ties and from that we can assume that we have to win 
 every round, no ties or losses, for 100 rounds in a row.
 
-:-------------------------------------------------------------------------------------------------------------------------------------------
+* * *
 
 Next, let's get a little more in depth and go under the hood to see what the program is actually doing with our input, and maybe see if we can figure out
 how the guru decides which value he will pick.
