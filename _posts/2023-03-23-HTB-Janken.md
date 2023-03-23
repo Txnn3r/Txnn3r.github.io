@@ -116,7 +116,7 @@ def retry():
 	r = remote('64.227.41.83',30682)
 	line = r.recvline()
 	r.send(b'1\n')
-	choices=[b'paper\n',b'rock\n',b'scissors\n']
+	choices = [b'paper\n',b'rock\n',b'scissors\n']
 	for i in range(0,100):
 		print(i)
 		time = libc.time(0)
