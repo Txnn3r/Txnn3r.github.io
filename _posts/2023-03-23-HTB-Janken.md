@@ -49,7 +49,7 @@ every round, no ties or losses, for 100 rounds in a row.
 Next, let's get a little more in depth and go under the hood to see what the program is actually doing with our input, and maybe see if we can figure out
 how the guru decides which value he will pick.
 
-## [](#header-2)Reading the assembly with Ghidra
+## [](#ghidra)Reading The Assembly With Ghidra
 
 A little background: [Ghidra](https://ghidra-sre.org/) is a free and open source tool created by the NSA in order to read binaries and attempt to decompile the assembly back into source code.
 
@@ -96,7 +96,14 @@ iVar1 = rand();
 >
 > Finally `iVar1 = rand();` will return a random number based on the current `srand()` seed
 
-### [](#header-3)Header 3
+* * *
+
+Knowing this, we are ready to exploit the binary! If we can set the seed for the `srand()` function to the same value as the server, we can know the guru's choice every time and base our response off of it!
+
+
+## [](#solution)Crafting Our Exploit
+
+The moment you all have been waiting for!
 
 ```js
 // Javascript code with syntax highlighting.
