@@ -53,13 +53,13 @@ how the guru decides which value he will pick.
 
 A little background: [Ghidra](https://ghidra-sre.org/) is a free and open source tool created by the NSA in order to read binaries and attempt to decompile the assembly back into source code.
 
-First, you will want to open Ghidra, select a folder to work in, and the go to\ `File > Import File > janken` to import the binary into Ghidra. 
+First, you will want to open Ghidra, select a folder to work in, and the go to <br />`File > Import File > janken` to import the binary into Ghidra. 
 
 Next, double click on the file `janken` and a picture of a dragon will pop up on your screen before opening the Ghidra CodeBrowser.
 
 ![image](https://user-images.githubusercontent.com/101006959/227357297-edb8cbc4-b32c-4dee-91d7-53bdb8b337d2.png)
 
-Alternatively, you can click on the dragon icon after first opening Ghidra and go to\ `File > Import File > janken` to open the file from within the CodeBrowser.
+Alternatively, you can click on the dragon icon after first opening Ghidra and go to <br />`File > Import File > janken` to open the file from within the CodeBrowser.
 
 When first opening a binary, Ghidra will ask you if you would like to analyze the file, click `Yes` and then `Analyze`.
 
