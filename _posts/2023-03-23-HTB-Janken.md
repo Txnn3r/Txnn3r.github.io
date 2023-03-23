@@ -12,7 +12,17 @@ This writeup will walk you through how to solve the Challenge `Misc - Janken` fr
 To start: From the desciption of `Janken` we can see that the goal of thoal of the challenge is to beat the guru 100 times in a row at the game.
 We can also see that the game will be similar to the well known game: rock, paper, scissors.
 
-## [](#header-2)Header 2
+We are given a docker instance to connect to and some `files` to help us beat the guru.
+
+`files`:
+
+- flag.txt
+- janken
+- .glibc
+  - ld-linux-x86-64.so.2
+  - libc.so.6
+
+### [](#header-2)Header 2
 
 > This is a blockquote following a header.
 >
