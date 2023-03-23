@@ -91,7 +91,9 @@ iVar1 = rand();
 ### [](#code-breakdown)Code Breakdown
 
 > `tVar2` is set to the current time in seconds (also known as unix time)
+>
 > `srand((uint)tVar2);` will set the seed for the `rand()` function based on the unix time
+>
 > Finally `iVar1 = rand();` will return a random number based on the current `srand()` seed
 
 ### [](#header-3)Header 3
