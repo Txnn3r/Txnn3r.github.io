@@ -51,7 +51,21 @@ how the guru decides which value he will pick.
 
 ## [](#header-2)Reading the assembly with Ghidra
 
-A little background: Ghidra is a free and open source tool created by the NSA in order to read binaries and attempt to decompile the assembly back into source code
+A little background: [Ghidra](https://ghidra-sre.org/) is a free and open source tool created by the NSA in order to read binaries and attempt to decompile the assembly back into source code.
+
+First, you will want to open Ghidra, select a folder to work in, and the go to `File > Import File > janken` to import the binary into Ghidra. 
+
+Next, double click on the file `janken` and a picture of a dragon will pop up on your screen before opening the Ghidra CodeBrowser.
+
+![image](https://user-images.githubusercontent.com/101006959/227357297-edb8cbc4-b32c-4dee-91d7-53bdb8b337d2.png)
+
+Alternatively, you can click on the dragon icon after first opening Ghidra and go to `File > Import File > janken` to open the file from within the CodeBrowser.
+
+When first opening a binary, Ghidra will ask you if you would like to analyze the file, click `Yes` and then `Analyze`.
+
+You should be greeted with a `Listing` of the assembly code, as well as a list of `Functions`. If you do not see the `Functions` tab, you can go to `Window > Functions` to view the different functions of the `janken` file.
+
+Let's try viewing the main function in Ghidra and see if we can figure out what the game does & how he makes his choice.
 
 ![image](https://user-images.githubusercontent.com/101006959/227349063-2a76377c-ced7-4cd0-8a26-5734e4b5d644.png)
 
