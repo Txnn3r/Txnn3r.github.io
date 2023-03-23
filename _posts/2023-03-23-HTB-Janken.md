@@ -5,22 +5,28 @@ published: true
 
 This writeup will walk you through how to solve the Challenge `Misc - Janken` from Hack The Box's 2023 Cyber Apocalypse CTF!
 
-## [](#header-1)Challenge Overview
+### [](#header-1)Challenge Overview
 
 ![image](https://user-images.githubusercontent.com/101006959/227324103-28c7da9a-7d2b-426f-87db-4db5e314800a.png)
 
 To start: From the desciption of `Janken` we can see that the goal of thoal of the challenge is to beat the guru 100 times in a row at the game.
 We can also see that the game will be similar to the well known game: rock, paper, scissors.
 
-We are given a docker instance to connect to and some `files` to help us beat the guru.
+We are given a docker instance to connect to and some files to help us beat the guru.
 
-`files`:
+### [](#header-3)files:
 
 - flag.txt
 - janken
 - .glibc
   - ld-linux-x86-64.so.2
   - libc.so.6
+
+using the 'file' command in linux, we can see that `janken` is an ELF file
+
+```
+janken: ELF 64-bit LSB pie executable, x86-64
+```
 
 ### [](#header-2)Header 2
 
