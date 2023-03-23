@@ -14,7 +14,7 @@ We can also see that the game will be similar to the well known game: rock, pape
 
 We are given a docker instance to connect to and some files to help us beat the guru.
 
-### [](#files)files:
+#### [](#files)files:
 
 - flag.txt
 - janken
@@ -109,7 +109,6 @@ The moment you all have been waiting for! I have attached my solve.py script bel
 from pwn import *
 #context.log_level='debug'
 from ctypes import CDLL
-import sys
 
 libc = CDLL('libc.so.6')
 def retry():
@@ -131,12 +130,16 @@ def retry():
 	r.interactive()
 retry()
 ```
+First, let's go over the imports:
 
-#### [](#header-4)Header 4
+#### [](#imports)Imports
 
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
+*   pwn was used to import pwntools to connect to the server for exploiting
+*   CDLL from ctypes was used to import functions from the C-codebase
+*   context.log_level='debug' is not an import, but is used in conjunction with pwn to debug server connection if needed
+
+Next...
+
 
 ##### [](#header-5)Header 5
 
