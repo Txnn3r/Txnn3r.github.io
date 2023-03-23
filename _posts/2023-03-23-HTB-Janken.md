@@ -22,13 +22,24 @@ We are given a docker instance to connect to and some files to help us beat the 
   - ld-linux-x86-64.so.2
   - libc.so.6
 
-using the 'file' command in linux, we can see that `janken` is an ELF file
+Using the 'file' command in linux, we can see that `janken` is an ELF file
 
 ```
 janken: ELF 64-bit LSB pie executable, x86-64
 ```
+Running the file locally we are greeted with the following output:
 
-### [](#header-2)Header 2
+![image](https://user-images.githubusercontent.com/101006959/227333440-cb79b7dc-9e11-4bc8-a08c-4f8a04a99ec9.png)
+
+First, let's view the `ℜ ℧ ∟ Ӗ ⅀` of the game:
+
+![image](https://user-images.githubusercontent.com/101006959/227333865-7a0d9a4d-5888-460f-a5be-c4fb232ca9f2.png)
+
+From here we can see the basic rules of rock, paper, scissors; and the requirements of winning 100 times in a row in order to recieve our prize.
+
+### [](#header-2)Reading the assembly with Ghidra
+
+
 
 > This is a blockquote following a header.
 >
