@@ -37,6 +37,11 @@ First, let's view the `ℜ ℧ ∟ Ӗ ⅀` of the game:
 
 From here we can see the basic rules of rock, paper, scissors; and the requirements of winning 100 times in a row in order to recieve our prize.
 
+Let's first try `ℙ ∟ ₳ Ұ`ing the game and see what happens.
+
+![image](https://user-images.githubusercontent.com/101006959/227343416-3ef090dc-c3bd-4bb1-bd84-7aceb0f2c355.png)
+
+
 ### [](#header-2)Reading the assembly with Ghidra
 
 
