@@ -71,7 +71,7 @@ Let's try viewing the main function in Ghidra and see if we can figure out what 
 
 Typing `main` into the Filter bar we can see 2 functions returned, double clicking on the one named `main` will bring up Ghidra's attempt to decompile the main function.
 
-###### [](#Note)Note: It is important to know note that the Ghidra Decompiler may not always be 100% correct, so make sure to consult your assembly code to verify!
+###### [](#Note)Note: It is important to note that the Ghidra Decompiler may not always be 100% correct, make sure to consult your assembly code to verify!
 
 From the `Decompile: main` tab, we can see lots of different variables and functions, but the one that I took notice of almost immediatly was `game()`. We can see that it is inside a loop that itterates by 1 and ends at 100, so this is likely our "100 rounds"!
 
