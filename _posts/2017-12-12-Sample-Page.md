@@ -1,12 +1,11 @@
 ---
-title: HTB Cyber Apocalypse 2023 - Misc Janken
+title: Sample Page
 published: true
 ---
 
-This writeup will walk you through how to solve the Challenge `Misc Janken` from Hack The Box's 2023 Cyber Apocalypse CTF!
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
-[Link to another page](https://ctf.umasscybersec.org/team).
+[Link to another page](another-page).
 
 There should be whitespace between paragraphs.
 
