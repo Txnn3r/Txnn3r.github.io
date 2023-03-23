@@ -5,7 +5,7 @@ published: true
 
 This writeup will walk you through how to solve the Challenge `Misc - Janken` from Hack The Box's 2023 Cyber Apocalypse CTF!
 
-### [](#header-1)Challenge Overview
+## [](#header-1)Challenge Overview
 
 ![image](https://user-images.githubusercontent.com/101006959/227324103-28c7da9a-7d2b-426f-87db-4db5e314800a.png)
 
@@ -41,9 +41,18 @@ Let's first try `ℙ ∟ ₳ Ұ`ing the game and see what happens.
 
 ![image](https://user-images.githubusercontent.com/101006959/227343416-3ef090dc-c3bd-4bb1-bd84-7aceb0f2c355.png)
 
+For this example, we chose `rock` , and the guru chose `rock`. The program doesn't seem to consider ties and from that we can assume that we have to win 
+every round, no ties or losses, for 100 rounds in a row.
 
-### [](#header-2)Reading the assembly with Ghidra
 
+Next, let's get a little more in depth and go under the hood to see what the program is actually doing with our input, and maybe see if we can figure out
+how the guru decides which value he will pick.
+
+## [](#header-2)Reading the assembly with Ghidra
+
+A little background: Ghidra is a free and open source tool created by the NSA in order to read binaries and attempt to decompile the assembly back into source code
+
+![image](https://user-images.githubusercontent.com/101006959/227349063-2a76377c-ced7-4cd0-8a26-5734e4b5d644.png)
 
 
 > This is a blockquote following a header.
