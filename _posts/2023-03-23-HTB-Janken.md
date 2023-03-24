@@ -80,7 +80,7 @@ Double clicking on the `game()` function will open the decompiled version of `ga
 
 ![image](https://user-images.githubusercontent.com/101006959/227369816-7dfaeca5-c882-46dd-9eea-a413a231e8cf.png)
 
-Looking at the variables in the first `fprintf()` statement, we can see that the guru's choice comes from `local_78` and our choice comes from `local_38`. We can also see that `local_78` has 3 options as expected: rock, paper, and scissors. We should also note of is what decides which choice the guru makes: `iVar1 % 3`
+Looking at the variables in the first `fprintf()` statement, we can see that the guru's choice comes from `local_78` and our choice comes from `local_38`. We can also see that `local_78` has 3 options as expected: rock, paper, and scissors. We should also note of is what decides which choice the guru makes: `iVar1 % 3`.
 
 `iVar1` gets assigned through the following code in the function:
 ```c
@@ -91,11 +91,11 @@ iVar1 = rand();
 
 ### [](#code-breakdown)Code Breakdown
 
-> `tVar2` is set to the current time in seconds (also known as unix time)
+> `tVar2` is set to the current time in seconds (also known as Unix time).
 >
-> `srand((uint)tVar2);` will set the seed for the `rand()` function based on the unix time
+> `srand((uint)tVar2);` will set the seed for the `rand()` function based on the Unix time.
 >
-> Finally `iVar1 = rand();` will return a random number based on the current `srand()` seed
+> Finally `iVar1 = rand();` will return a random number based on the current `srand()` seed.
 
 * * *
 
@@ -135,89 +135,31 @@ First, let's go over the imports:
 
 #### [](#imports)Imports
 
-*   `pwn` was used to import pwntools to connect to the server for exploiting
-*   `CDLL` from `ctypes` was used to import functions from the C-codebase
+*   `pwn` was used to import pwntools to connect to the server for exploiting.
+*   `CDLL` from `ctypes` was used to import functions from the C-codebase.
 
-###### [](#Note2)`context.log_level='debug'` is not an import, but is used in conjunction with pwn to debug server connection if needed
+###### [](#Note2)`context.log_level='debug'` is not an import, but is used in conjunction with pwn to debug server connection if needed.
 
-Next...
+`libc = CDLL('libc.so.6')` was used to define which C library to load and set the variable `libc` equal to said library.
 
+#### [](#exploit)The Exploit
 
-##### [](#header-5)Header 5
+We first connected to the remote server and sent a `1` in order to start the game. We set a variable with all of our `choices`, and then began the loop of 100 rounds.
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+###### [](#Note3)The order of `choices` is important as it is the opposite of the order of the guru's choices, meaning our index=0 will win against guru index=0.
 
-###### [](#header-6)Header 6
+*   We used `time = libc.time(0)` to set the `time` variable equal to the current time in seconds in the Unix epoch.
+*   Next we called `libc.srand(time)` to set the seed for the `rand()` function based on the value of `time`.
+*   Finally, we set our `choice` index equal to `libc.rand()%3` to get modulus 3 of the `rand()` output.
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+If everything goes according to plan our `libc.rand()%3` should be the same as the one running on the remote server!
 
-### There's a horizontal rule below this.
+Finally, the timings between the server and our machine must be synced 100 times in a row since the `srand()` function is reseeded for each round in the game. Due to inconsistencies in the speed of the server / script, it may take a couple tries to get all 100 rounds to sync up. This is the reason for the `retry()` function, and the try / except blocks.
 
-* * *
+###### [](#Note4)`r.interactive()` is called after the 100th round in the game in order to keep the standard input open, otherwise the server would close the connection without giving us the flag.
 
-### Here is an unordered list:
+If all goes well on syncing times, then this will be our response!
 
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
+#### [](#flag)Flag
 
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+![image](https://user-images.githubusercontent.com/101006959/227394152-b1bd4e87-ad39-41d6-8bae-4ed97de19ac2.png)
