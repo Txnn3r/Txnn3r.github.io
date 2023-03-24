@@ -3,4 +3,4 @@ layout: page
 title: About
 ---
 
-Something about me.
+Cybersecurity student with a passion for CTFs!
