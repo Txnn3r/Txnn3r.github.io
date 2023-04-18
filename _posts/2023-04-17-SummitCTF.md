@@ -153,7 +153,7 @@ We are given a pcap file titled `exfil.pcap` which had just under 2,000 packets 
 
 I originally got stuck attempting to find a way to decrypt QUIC packets without an SSHKEYLOG file and spent a good 30 minutes going down that rabbithole.
 
-Eventually, I viewed the Protocol Hierarchy Statistics in wireshark and noticed that there was a fiew ICMP packets I missed previously:
+Eventually, I viewed the Protocol Hierarchy Statistics in wireshark and noticed that there was a few ICMP packets I missed previously:
 
 ![image](https://user-images.githubusercontent.com/101006959/232649748-c56bd9c7-5506-4107-ada5-1db9e6d56e9f.png)
 
@@ -171,7 +171,7 @@ I extracted the following data, and noted that it looked encoded similar to prev
 P53756d6d6974435453756d6d6974435453756d6d467b6d30754e745f467b6d30754e745f467b6d30Ðµ337633526553747d337633526553747d33763352
 ```
 
-Decoding from Hex to ASCII I recieved the following text, which looked to me like a flag! However thanks to UDP, it seems it was a bit corrupted and the data was sent multiple times:
+Decoding from Hex to ASCII I recieved the following text, which looked to me like a flag! However, it seems it was a bit corrupted and the data was sent multiple times:
 
 ```
 SummitCTSummitCTSummF{m0uNt_F{m0uNt_F{m03v3ReSt}3v3ReSt}3v3R
@@ -201,7 +201,7 @@ This was one of my favorite challenges and was really fun to complete. I also ma
 
 We are given an explanation of the challenge and a server to connect to `0.cloud.chals.io:23434`. The goal of the challenge was to solve a system of equations with emojis instead of variables.
 
-Connecting to the server we can see that this isn't just a regular systems of equations, we have to script it, and the emojis / numbers change every time:
+Connecting to the server we can see that, as expected, this isn't just a regular system of equations, the emojis / numbers change every time:
 
 ![image](https://user-images.githubusercontent.com/101006959/232649862-bf83543a-737c-42bc-9c5e-45847e25f8ad.png)
 
@@ -268,14 +268,14 @@ r.sendline(answerdict['C'])
 # interactive to view the flag after we have completed the challenge
 r.interactive()
 ```
-### [](#code-breakdown)Code Breakdown
+### [](#code-breakdown)<u>Code Breakdown</u>
 
-#### [](#imports)Imports
+### [](#imports)Imports
 
 *   `pwn` was used to import pwntools to connect to the server and read in data.
-*   `z3` was used to solve the systems of equations once we had it in the right format.
+*   `z3` was used to solve the system of equations once we had it in the right format.
 
-#### [](#formatting)Formatting The Data
+### [](#formatting)Formatting The Data
 
 To start: I connected to the server and created a list recieving all of the data for the equations, splitting it for every line.
 
@@ -285,7 +285,7 @@ r.recvuntil(b'\n')
 list = r.recvuntil(b':').split(b'\n')
 ```
 
-Once I had the data read in, I used a bunch of different string formatting functions to set our variables for the 3 different emojis.
+Once I had the data read in, I used a bunch of different string formatting functions to set up variables for the 3 different emojis.
 
 ```py
 emoji1 = list[0].split(b'+')[0].split(b'*')[-1].strip(b' ').strip(b')')
@@ -293,7 +293,7 @@ emoji2 = list[0].split(b'+')[1].split(b'*')[-1].strip(b' ').strip(b')')
 emoji3 = list[0].split(b'+')[2].split(b'*')[-1].strip(b' ').split(b')')[0]
 ```
 
-Next, I created a list of each equation to be used later in out z3 (we will still have to format it correctly though).
+Next, I created a list of each equation to be used later in out z3 (we will still have to format it).
 
 ```py
 math = [list[0], list[1], list[2]]
@@ -317,7 +317,7 @@ for i in range(len(math)):
 ```
 And with that, we are ready to solve!
 
-#### [](#z3)Solving with z3
+### [](#z3)Solving with z3
 
 `z3` is such a powerful library and can be used for so much more than just simple equations like this, combined with the `sage` library it can be used to solve some pretty tough cryptography challenges too!
 
