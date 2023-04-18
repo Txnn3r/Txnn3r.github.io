@@ -321,7 +321,7 @@ And with that, we are ready to solve!
 
 `z3` is such a powerful library and can be used for so much more than just simple equations like this, combined with the `sage` library it can be used to solve some pretty tough cryptography challenges too!
 
-To set everything up in z3, we created our `Int()` variables to show that A, B, and C are expected to be an integer values, we created our `Solver()`, and then added our equations to z3 using `add()`
+To set everything up in z3, we created our `Int()` variables to show that A, B, and C are expected to be an integer values, we created our `Solver()`, and then added our equations to z3 using `add()`.
 
 ```py
 A = Int('A')
@@ -355,7 +355,7 @@ answerdict[model.split(',')[1].split('=')[0].strip(' ').strip('[')] = model.spli
 answerdict[model.split(',')[2].split('=')[0].strip(' ').strip('[')] = model.split(',')[2].split('=')[-1].strip(' ').strip(']')
 ```
 
-Finally, it's time to send in our answers to the server! We again use `pwntools` to send each variable value in one line at a time. Then we use `r.interactive()` to keep standard input open so we can view the flag.
+Finally, it's time to send in our answers to the server. We again use `pwntools` to send each variable value in one line at a time. Then we use `r.interactive()` to keep standard input open so we can view the flag.
 ```py
 r.sendline(answerdict['A'])
 r.sendline(answerdict['B'])
@@ -562,4 +562,4 @@ Putting it all together, the expected buttons from left to right would be: 4, 5,
 
 Once you correctly input the sequence of: `4, 5, 3, 1, 2, wait, 4, 5, 2` then all 3 LEDs would light up and you would recieve the flag from the HII sponsor.
 
-`flag: Sadly I did not write the flag down for this challenge since it was input directly by the HII sponsor`
+`Flag: Sadly I did not write the flag down for this challenge since it was input directly by the HII sponsor`
