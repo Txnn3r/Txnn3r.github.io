@@ -11,7 +11,15 @@ Challenges: `Crypto - Ancient Encryption`, `Stego - Job Please`, `Forensics - Su
 
 [Stego - Job Please](#Stego---Job-Please)
 
+[Forensics - Summit Secrets](#Forensics---Summit-Secrets)
+
 [Forensics - Escaping the Matrix](#forensics---escaping-the-matrix)
+
+[Forensics - Emergency Exfil](#Forensics---Emergency-Exfil)
+
+[Misc - Emoji System](#Misc---Emoji-System)
+
+[Misc - Close Encounters](#Misc---Close-Encounters)
 
 ## [](#Crypto-AncientEncryption)Crypto - Ancient Encryption
 
