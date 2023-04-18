@@ -115,9 +115,9 @@ I got lucky and started with `UDP stream 0`, taking the first random string befo
 
 I continued this for every first random string in `UDP stream 0` until I finally got a flag!
 
-`Base64: VGhlIGZsYWcgeW91IGhhdmUgYmVlbiB3YWl0aW5nIGZvciBpcyAuLi4gUGF1c2luZyBmb3IgZHJhbWF0aWMgZWZmZWN0IC4uLiA6IFN1bW1pdENURntTdXNfRDBtYTFuX240bWVzfQ==`
+```Base64: VGhlIGZsYWcgeW91IGhhdmUgYmVlbiB3YWl0aW5nIGZvciBpcyAuLi4gUGF1c2luZyBmb3IgZHJhbWF0aWMgZWZmZWN0IC4uLiA6IFN1bW1pdENURntTdXNfRDBtYTFuX240bWVzfQ==```
 
-`ASCII: The flag you have been waiting for is ... Pausing for dramatic effect ... : SummitCTF{Sus_D0ma1n_n4mes}`
+```ASCII: The flag you have been waiting for is ... Pausing for dramatic effect ... : SummitCTF{Sus_D0ma1n_n4mes}```
 
 `Flag: SummitCTF{Sus_D0ma1n_n4mes}`
 
