@@ -524,7 +524,6 @@ module close_encounters (buttons[3:0], cpu_reset_n, led[3:0], clk);
 endmodule
 
   ```
-</details>
 
 The code may look a bit daunting at first, but after scanning through it it becomes much easier to understand.
 
