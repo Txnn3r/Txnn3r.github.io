@@ -6,7 +6,8 @@ published: true
 The following are a list of writeups from Virginia Tech's `Summit CTF` from this past weekend where my team `MasonCC` and I placed 2nd overall!
 
 Challenges: `Crypto - Ancient Encryption`, `Stego - Job Please`, `Forensics - Summit Secrets`, `Forensics - Escaping the Matrix`, `Forensics - Emergency Exfil`, `Misc - Emoji System`, and `Misc - Close Encounters`
-
+[Crypto - Ancient Encryption](#Crypto---Ancient-Encryption)
+[Stego - Job Please](#Stego---Job-Please)
 [Forensics - Escaping the Matrix](#forensics---escaping-the-matrix)
 
 ## [](#Crypto-AncientEncryption)Crypto - Ancient Encryption
