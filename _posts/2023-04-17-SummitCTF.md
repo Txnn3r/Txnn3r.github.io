@@ -44,9 +44,9 @@ During the competition I first used a Caesar cipher with a custom alphabet and s
 However, redoing the challenge for this writeup I simply put the ciphertext into the Vigenere decoder with the custome alphabet and hit `automatic decryption` and the following was my result:
 
 ```
-	TRiple point security is the Flag9 To find more information about the company0 internships0 and other opportunities visit the triple Point security .a0ol1a 9p z.z3nqssf9oylhnrofolh4237nw
+TRiple point security is the Flag9 To find more information about the company0 internships0 and other opportunities visit the triple Point security .a0ol1a 9p z.z3nqssf9oylhnrofolh4237nw
 ```
-I believe this was likely the intended solution (or a 'better' solution) as it showed the following with a key of `HOKIE` (Virginia Tech's mascot)
+I believe this was likely the intended solution (or a 'better' solution) as it showed the following with a key of `HOKIE` (Virginia Tech's mascot):
 
 ![image](https://user-images.githubusercontent.com/101006959/232649570-ba1e813a-3e36-4fb2-a6c7-a6fdab058d52.png)
 
@@ -62,7 +62,7 @@ I believe this was likely the intended solution (or a 'better' solution) as it s
 
 This was the only Stego (Steganography) challenge at Summit CTF, it was worth 150 points and was created by `Triple Point Security`!
 
-For this challenge we were given no file or server to connect to, but based on the challenge description I presumed that the flag was located somewhere on the Triple Point Security website [careers page](https://www.triplepointsecurity.com/careers.html).
+For this challenge we were only given the description above, based on the challenge description I presumed that the flag was located somewhere on the Triple Point Security website [careers page](https://www.triplepointsecurity.com/careers.html).
 
 Since the challenge was steganography related, the first thing that stood out to me was the large image in the banner.
 
