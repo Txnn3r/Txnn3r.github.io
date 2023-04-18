@@ -10,7 +10,8 @@ Challenges: `Crypto - Ancient Encryption`, `Stego - Job Please`, `Forensics - Su
 
 ## [](#Crypto-AncientEncryption)Crypto - Ancient Encryption
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649519-21cebca1-0982-4522-aa24-4ef579dec9f2.png)
+
 
 This was the only cryptography challenge at Summit CTF, it was worth 100 points and was created by `Triple Point Security`!
 
@@ -47,7 +48,8 @@ However, redoing the challenge for this writeup I simply put the ciphertext into
 ```
 I believe this was likely the intended solution (or a 'better' solution) as it showed the following with a key of `HOKIE` (Virginia Tech's mascot)
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649570-ba1e813a-3e36-4fb2-a6c7-a6fdab058d52.png)
+
 
 `Flag: TRiple point security`
 
@@ -55,7 +57,8 @@ I believe this was likely the intended solution (or a 'better' solution) as it s
 
 ## [](#Stego-JobPlz)Stego - Job Please
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649611-18b6aa9f-2d78-419e-ac0a-c5b4a4ff0ab9.png)
+
 
 This was the only Stego (Steganography) challenge at Summit CTF, it was worth 150 points and was created by `Triple Point Security`!
 
@@ -73,7 +76,8 @@ Once I clicked submit the following flag was returned to me!
 
 ## [](#Forensics-SummitSecrets)Forensics - Summit Secrets
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649634-115ecca2-8c3f-4863-8f5a-c68c9fb2693c.png)
+
 
 This was the first of three forensics challenges at Summit CTF and was worth 100 points!
 
@@ -93,7 +97,7 @@ Finally, opening the pdf file we are given a flag!
 
 ## [](#Forensics-EscapingtheMatrix)Forensics - Escaping the Matrix
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649652-a48339b6-31bf-4c70-aa19-e2f1ba8d7c04.png)
 
 This was the second of three forensics challenges at Summit CTF and was worth 150 points!
 
@@ -101,13 +105,13 @@ We are given a pcap file titled `EscapingTheMatrix.pcap` which had just under 60
 
 In this pcap, every packet was a DNS packet and what caught my eye imediatly was the URL that it was attempting to request.
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649671-cf8c2c40-615c-4728-973b-dc90f8c2df35.png)
 
 The random string of letters and numbers looked a lot like base64 encoding to me, so I picked a few out and tried decoding them.
 
 I got lucky and started with `UDP stream 0`, taking the first random string before the period (example below), I began to see words appear as I decoded from base64.
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649691-9a3ebe7b-ca1d-4514-84bd-ace041ebb63b.png)
 
 I continued this for every first random string in `UDP stream 0` until I finally got a flag!
 
@@ -121,7 +125,7 @@ I continued this for every first random string in `UDP stream 0` until I finally
 
 ## [](#Forensics-EmergencyExfil)Forensics - Emergency Exfil
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649722-2b7e229d-edde-4c80-a10c-cbdd227f1446.png)
 
 This was the final forensics challenges at Summit CTF and was worth 150 points!
 
@@ -131,11 +135,11 @@ I originally got stuck attempting to find a way to decrypt QUIC packets without 
 
 Eventually, I viewed the Protocol Hierarchy Statistics in wireshark and noticed that there was a fiew ICMP packets I missed previously:
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649748-c56bd9c7-5506-4107-ada5-1db9e6d56e9f.png)
 
 filtering the packets for ICMP only, there was 8 packets that appeared, 4 request and 4 reply packets.
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649757-a7371f4c-8291-4be3-a79d-2a11f85cf17c.png)
 
 There was no stream here to follow, so viewing the ASCII representation of the hex data I noticed that the first 3 sets of request/reply packets had strings of numbers in them, so I extracted the data from them by simply just copying it as printable text.
 
@@ -167,19 +171,19 @@ ASCII: SummitCTF{m0uNt_3v3ReSt}
 
 ## [](#Misc-EmojiSystem)Misc - Emoji System
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649830-a21d556d-8beb-4e25-8efb-e86f3a666c01.png)
 
 This was one of five Miscellaneous (Misc) challenges at Summit CTF and was worth 250 points!
 
 This was one of my favorite challenges and was really fun to complete. I also managed to score first blood in solving it!
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649842-84b0dded-95f9-4729-9c87-2133bb331131.png)
 
 We are given an explanation of the challenge and a server to connect to `0.cloud.chals.io:23434`. The goal of the challenge was to solve a system of equations with emojis instead of variables.
 
 Connecting to the server we can see that this isn't just a regular systems of equations, we have to script it, and the emojis / numbers change every time:
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649862-bf83543a-737c-42bc-9c5e-45847e25f8ad.png)
 
 Only 3 seconds?? Looks like we're gonna have to script it! I have included my solution script below to view before I explain it in more detail:
 
@@ -342,7 +346,7 @@ r.interactive()
 
 Now, we can run it and recieve our flag!
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649891-b2b79c29-8473-4215-ba21-c52703dec9b6.png)
 
 `Flag: summitCTF{M4TH3M4T1CZ_IZ_H4RD_W1TH_EM0JIS}`
 
@@ -350,7 +354,7 @@ Now, we can run it and recieve our flag!
 
 ## [](#Misc-EmojiSystem)Misc - Close Encounters
 
-*****Insert Image of challenge here*****
+![image](https://user-images.githubusercontent.com/101006959/232649903-04ae5b38-4490-4e4f-aad3-932ccf77918c.png)
 
 This was one of five Misc challenges at Summit CTF, it was worth 175 points and was created by `Huntington Ingalls Industries`!
 
