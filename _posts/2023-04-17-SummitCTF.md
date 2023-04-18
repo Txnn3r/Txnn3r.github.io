@@ -98,7 +98,7 @@ Finally, opening the pdf file we are given a flag!
 
 ## [](#Forensics-EscapingtheMatrix)Forensics - Escaping the Matrix
 
-# Forensics-Escaping the Matrix
+## (Forensics-EscapingtheMatrix)Forensics - Escaping the Matrix
 
 ![image](https://user-images.githubusercontent.com/101006959/232649652-a48339b6-31bf-4c70-aa19-e2f1ba8d7c04.png)
 
