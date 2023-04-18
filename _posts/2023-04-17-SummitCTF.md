@@ -98,6 +98,8 @@ Finally, opening the pdf file we are given a flag!
 
 ## [](#Forensics-EscapingtheMatrix)Forensics - Escaping the Matrix
 
+# Forensics-EscapingtheMatrix
+
 ![image](https://user-images.githubusercontent.com/101006959/232649652-a48339b6-31bf-4c70-aa19-e2f1ba8d7c04.png)
 
 This was the second of three forensics challenges at Summit CTF and was worth 150 points!
