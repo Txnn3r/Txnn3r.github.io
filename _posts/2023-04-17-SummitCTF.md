@@ -7,6 +7,7 @@ The following are a list of writeups from Virginia Tech's `Summit CTF` from this
 
 Challenges: `Crypto - Ancient Encryption`, `Stego - Job Please`, `Forensics - Summit Secrets`, `Forensics - Escaping the Matrix`, `Forensics - Emergency Exfil`, `Misc - Emoji System`, and `Misc - Close Encounters`
 
+[Forensics - Escaping the Matrix](#Forensics-EscapingtheMatrix)
 
 ## [](#Crypto-AncientEncryption)Crypto - Ancient Encryption
 
@@ -87,7 +88,7 @@ When first viewing the pcap file the majority of the packets are TCP / HTTP pack
 
 Viewing the TCP streams (stream 8-10 specifically) of those FTP packets, we can see that a file is being sent titled `summit_secrets.pdf`. From this I assumed there was a PDF somewhere we had to extract.
 
-Continuing to TCP stream 11 we can see a PDF file header, so we can assume this is the PDF. Clicking `Show data as` > `Raw` > `Save as...` and saving the file as `summit_secrets.pdf`. We successfully extracted the PDF file!
+Continuing to TCP stream 11 we can see a PDF file header, so we can assume this is the PDF. Clicking `Show data as` > `Raw` > `Save as...` and saving the file as `summit_secrets.pdf`. We successfully extracted the PDF file.
 
 Finally, opening the pdf file we are given a flag!
 
