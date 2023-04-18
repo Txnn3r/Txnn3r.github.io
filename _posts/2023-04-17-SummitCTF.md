@@ -7,7 +7,7 @@ The following are a list of writeups from Virginia Tech's `Summit CTF` from this
 
 Challenges: `Crypto - Ancient Encryption`, `Stego - Job Please`, `Forensics - Summit Secrets`, `Forensics - Escaping the Matrix`, `Forensics - Emergency Exfil`, `Misc - Emoji System`, and `Misc - Close Encounters`
 
-[Forensics - Escaping the Matrix](#Forensics-Escaping the Matrix)
+[Forensics - Escaping the Matrix](#Forensics-Escaping-the-Matrix)
 
 ## [](#Crypto-AncientEncryption)Crypto - Ancient Encryption
 
@@ -98,7 +98,7 @@ Finally, opening the pdf file we are given a flag!
 
 ## [](#Forensics-EscapingtheMatrix)Forensics - Escaping the Matrix
 
-# Forensics - Escaping the Matrix
+# Forensics-Escaping the Matrix
 
 ![image](https://user-images.githubusercontent.com/101006959/232649652-a48339b6-31bf-4c70-aa19-e2f1ba8d7c04.png)
 
