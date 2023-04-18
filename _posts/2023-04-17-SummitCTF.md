@@ -7,19 +7,19 @@ The following are a list of writeups from Virginia Tech's `Summit CTF` from this
 
 Challenges: `Crypto - Ancient Encryption`, `Stego - Job Please`, `Forensics - Summit Secrets`, `Forensics - Escaping the Matrix`, `Forensics - Emergency Exfil`, `Misc - Emoji System`, and `Misc - Close Encounters`
 
-[Crypto - Ancient Encryption](#Crypto---Ancient-Encryption)
+[Crypto - Ancient Encryption](#crypto---ancient-encryption)
 
-[Stego - Job Please](#Stego---Job-Please)
+[Stego - Job Please](#stego---job-please)
 
-[Forensics - Summit Secrets](#Forensics---Summit-Secrets)
+[Forensics - Summit Secrets](#forensics---summit-secrets)
 
 [Forensics - Escaping the Matrix](#forensics---escaping-the-matrix)
 
-[Forensics - Emergency Exfil](#Forensics---Emergency-Exfil)
+[Forensics - Emergency Exfil](#forensics---emergency-exfil)
 
-[Misc - Emoji System](#Misc---Emoji-System)
+[Misc - Emoji System](#misc---emoji-system)
 
-[Misc - Close Encounters](#Misc---Close-Encounters)
+[Misc - Close Encounters](#misc---close-encounters)
 
 ## [](#Crypto-AncientEncryption)Crypto - Ancient Encryption
 
