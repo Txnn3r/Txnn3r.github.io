@@ -383,7 +383,9 @@ This was a really cool challenge that most CTFs don't have, we were given a `Ver
 Our goal in this challenge was to turn all 3 LED lights on and have them stay on, once we did that the sponsor would give us the flag!
 
 To start, we were given a Verilog file titled `close_encounters.v` that when opened, displayed the following code:
-  
+
+* * *
+
 <details>
 <summary>Click for Code</summary>
 {% highlight verilog %}
@@ -547,6 +549,8 @@ endmodule
 {% endhighlight %}
 
 </details>
+
+* * *
 
 The code may look a bit daunting at first, but after scanning through it it becomes much easier to understand.
 
