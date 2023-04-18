@@ -115,9 +115,13 @@ I got lucky and started with `UDP stream 0`, taking the first random string befo
 
 I continued this for every first random string in `UDP stream 0` until I finally got a flag!
 
-```Base64: VGhlIGZsYWcgeW91IGhhdmUgYmVlbiB3YWl0aW5nIGZvciBpcyAuLi4gUGF1c2luZyBmb3IgZHJhbWF0aWMgZWZmZWN0IC4uLiA6IFN1bW1pdENURntTdXNfRDBtYTFuX240bWVzfQ==```
+```
+Base64: VGhlIGZsYWcgeW91IGhhdmUgYmVlbiB3YWl0aW5nIGZvciBpcyAuLi4gUGF1c2luZyBmb3IgZHJhbWF0aWMgZWZmZWN0IC4uLiA6IFN1bW1pdENURntTdXNfRDBtYTFuX240bWVzfQ==
+```
 
-```ASCII: The flag you have been waiting for is ... Pausing for dramatic effect ... : SummitCTF{Sus_D0ma1n_n4mes}```
+```
+ASCII: The flag you have been waiting for is ... Pausing for dramatic effect ... : SummitCTF{Sus_D0ma1n_n4mes}
+```
 
 `Flag: SummitCTF{Sus_D0ma1n_n4mes}`
 
@@ -364,7 +368,9 @@ Our goal in this challenge was to turn all 3 LED lights on and have them stay on
 
 To start, we were given a Verilog file titled `close_encounters.v` that when opened, displayed the following code:
   
-```verilog
+<details>
+<summary>Click for Code</summary>
+{% highlight verilog %}
 //Designed for the Cyclone III FPGA Starter Board
 //Reference manual found At https://cdrdv2-public.intel.com/654220/rm_ciii_starter_board.pdf
 module close_encounters (buttons[3:0], cpu_reset_n, led[3:0], clk);
@@ -522,8 +528,9 @@ module close_encounters (buttons[3:0], cpu_reset_n, led[3:0], clk);
 	end
 	
 endmodule
+{% endhighlight %}
 
-  ```
+</details>
 
 The code may look a bit daunting at first, but after scanning through it it becomes much easier to understand.
 
