@@ -21,6 +21,8 @@ The following are a list of writeups from Virginia Tech's `Summit CTF` from this
 
 [Misc - Close Encounters](#misc---close-encounters)
 
+* * *
+
 ## [](#Crypto-AncientEncryption)Crypto - Ancient Encryption
 
 ![image](https://user-images.githubusercontent.com/101006959/232649519-21cebca1-0982-4522-aa24-4ef579dec9f2.png)
