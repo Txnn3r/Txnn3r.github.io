@@ -5,6 +5,8 @@ published: true
 
 The following are a list of writeups from Virginia Tech's `Summit CTF` from this past weekend where my team `MasonCC` and I placed 2nd overall!
 
+![image](https://user-images.githubusercontent.com/101006959/232661629-a2a5e2f6-b7aa-4ad1-b10c-14cd318ae16a.png)
+
 ### Challenges:
 
 [Crypto - Ancient Encryption](#crypto---ancient-encryption)
