@@ -5,7 +5,7 @@ published: true
 
 The following are a list of `Forensics` writeups I completed after competing in this past weekend's CTF: `Space Heroes CTF` hosted by the Florida Institute of Technology!
 
-![image](https://user-images.githubusercontent.com/101006959/235042039-47713f58-768b-4963-a011-1fdcef983a67.png)
+![image](https://user-images.githubusercontent.com/101006959/235042277-031eee22-4ded-49c5-bf06-a88065421071.png)
 
 ### Challenges:
 
