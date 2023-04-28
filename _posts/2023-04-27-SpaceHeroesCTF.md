@@ -31,7 +31,7 @@ The following are a list of `Forensics` writeups from this past weekend's `Space
 
 For this challenge, we were given a singular file, a compressed image of a USB drive.
 
-#####File(s):
+##### [](#Files1)File(s):
 - convergence.img.gz
 
 We can extract the image through the use of either `gunzip convergence.img.gz` on Linux, or by using `WinRAR` on Windows.
@@ -60,7 +60,7 @@ We can see that a file named `flag.gif` was recently deleted, that is most likel
 
 For this challenge, we were given a singular file, a PowerPoint file with a single slide contained within it.
 
-#####File(s):
+##### [](#Files2)File(s):
 - A_New_Hope.pptx
 
 Opening the PowerPoint doesn't give us very much info on where the flag could be hidden, the only slide contains the following picture:
@@ -99,7 +99,7 @@ Once we do this and save the file with a `.jpg` file extension, the file success
 
 For this challenge, we were given a packet capture file that we can view within Wireshark.
 
-#####File(s):
+##### [](#Files3)File(s):
 - chall.jpg.pcap
 
 Opening the pcap file we can see there there are thousands of ICMP packets, and no other packet types.
@@ -144,7 +144,7 @@ The final part of this command is just for ease of use, `; feh flag.jpg` will ju
 
 For this challenge, we were given a packet capture file that we can view within Wireshark.
 
-#####File(s):
+##### [](#Files4)File(s):
 - exploit.pcap
 
 Opening the pcap file we can see there there are multiple different types of packet protocols, the majority of them being TCP packets.
@@ -196,7 +196,7 @@ Once the script was done, I ran it and the response from the server was the flag
 
 For this challenge, we were given a waveform audio file and a hint in the title of morse code.
 
-#####File(s):
+##### [](#Files5)File(s):
 - signal.wav
 
 From the title we have `.- ... -.-. .. ..` which when decoded ends up being morse code for `ASCII`. From this we can assume there is some type of ASCII data hidden within the audio file.
@@ -241,7 +241,7 @@ After decoding this string of binary, I recieved the flag below!
 
 For this challenge, we were given a Virtual Hard Disk file (VDH).
 
-#####File(s):
+##### [](#Files6)File(s):
 - starstream.vhd
 
 Seeing that we were given a VHD file, the first thing I did was open the file in Autopsy to see if there was any data I could gather from the disk.
@@ -292,7 +292,7 @@ I successfully managed to extract the flag from the PDF!
 
 For this challenge, we were given a compressed memory dump file.
 
-#####File(s):
+##### [](#Files7)File(s):
 - conspiracy_nut.tar.gz
 
 The first thing I did for this challenge was extracted the file and recieved a memory dump file titled `conspiracy_nut.dump`.
