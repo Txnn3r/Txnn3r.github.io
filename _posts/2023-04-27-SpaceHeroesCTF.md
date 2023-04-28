@@ -221,7 +221,7 @@ I used [morsecode.world](https://morsecode.world/international/decoder/audio-dec
 
 ![image](https://user-images.githubusercontent.com/101006959/235036037-33a14f8f-693e-4210-b016-c6251bdfe48d.png)
 
-after this I used some bash string formatting with `sed` and `tr` to change the letters from E & T to binary so that I could decode them.
+After this I used some bash string formatting with `sed` and `tr` to change the letters from E & T to binary so that I could decode them.
 
 ```
 echo "E T T T E E T T E T T E T E E E E T T E E E T T E T T T E T E E E T T E E T T E E T T T T E T T E T E E T T T E E E T T E E E E E E T E E E E E E E T T E E E T E E T E E E E E E T T E E E T T E E T T E T E E E T T E T T T E E E T E E E E E E T E E T E E E E E T T E E T T E E T T E T E E E T T T E E T E E E T E E E E E E T T T E T E T E E T E E E E E E E T T T E E E E E T T E E T T E E T T E E T T E T E T E E E E E T E T T T T T E E T T T E E E E E T T E E E E E E T T E E E E E T T T E E E E E E T E T E E E E T E E T E E T E T T E T T T E E E T E T E E T E E T E E E E E E E T T T T E E E E T E E E E E E E T E T T T T E T T E E T E E E T T E E T E T E T T T E T T E E E T E T T T T E T T E T T T E E T T T E T E T E T T E T T E E E T T E T T E E E T T T E E T T E T T T E E E E E T T E E E E T E T T E E E T T E T T E E T E T E T T T T T E T" | sed 's/ //g' | tr "ET" "01"
