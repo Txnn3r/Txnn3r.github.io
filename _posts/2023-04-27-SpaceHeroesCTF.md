@@ -313,7 +313,7 @@ After some trial and error and some dead ends, I eventually decided to try runni
 
 ![image](https://user-images.githubusercontent.com/101006959/235036215-a77bbeb3-f3a1-4c51-b249-517ac9066686.png)
 
-After I found this I knew 2 things about the flag on the system: 1 that it was likely a `.jpg` file format, and 2 that it likely came from the a web-server with the ip / port of `http://57.135.219.202:9000/`.
+After I found this I knew 2 things about the flag on the system: 1 that it was likely a `.jpg` file format & 2 that it likely came from the a web-server with the ip / port of `http://57.135.219.202:9000/`.
 
 Knowing this information I tried running a network scan on the memory dump to see if I could get any information about the ip that was listed next to `flag.jpg` and found out that it was opened in the firefox browser:
 
