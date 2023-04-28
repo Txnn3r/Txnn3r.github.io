@@ -280,7 +280,7 @@ I again typed in the password we recieved earlier and this time I was able to vi
 
 I successfully managed to extract the flag from the PDF!
 
-###### [](#Note1)I am still not certain why 7zip worked and binwalk didn't, my only assumption to this is that 7zip is a more powerful tool overall that can overcome the difficulties encountered by binwalk, or possibly that this challenge was simply just built to be extracted by 7zip instead of other extraction tools.
+###### [](#Note1)I am still not certain why 7-zip worked and binwalk didn't, my only assumption to this is that 7zip is a more powerful tool overall that can overcome the difficulties encountered by binwalk, or possibly that this challenge was simply just built to be extracted by 7zip instead of other extraction tools.
 
 `Flag: shctf{r1ver_styx}`
 
