@@ -17,7 +17,7 @@ The following are a list of `Forensics` writeups from this past weekend's `Space
 
 [Brainiac](#Brainiac)
 
-[My God, it's full of .- ... -.-. .. ..](#My-God,-it's-full-of-.--...--.-.-..-..)
+[My God, it's full of .- ... -.-. .. ..](#My-God-its-full-of)
 
 [space_stream](#space_stream)
 
@@ -190,7 +190,7 @@ Once the script was done, I ran it and the response from the server was the flag
 
 * * *
 
-## [](#My-God,-it's-full-of-.--...--.-.-..-..)My God, it's full of .- ... -.-. .. ..
+## [](#My-God-its-full-of)My God, it's full of .- ... -.-. .. ..
 
 ![image](https://user-images.githubusercontent.com/101006959/235036004-580f4b13-ffc5-403a-ae82-c4b35b362139.png)
 
