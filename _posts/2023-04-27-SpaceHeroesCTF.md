@@ -157,11 +157,11 @@ Viewing the TCP streams, on the very first stream (Stream 0) we can see some pec
 
 I searched through the rest of the streams and also attempted to search the file for the string `shctf{` to see if the flag was in there, but had no luck.
 
-After some thinking I decided to check if we were also able to access the server shown in the TCP stream, using the ip `165.227.210.30` and port `16306` we were successfully able connect to the server and recieved the following screen!
+After some thinking I decided to check if we were also able to access the server shown in the TCP stream, using the ip `165.227.210.30` and port `16306` we were successfully able connect to the server and received the following screen!
 
 ![image](https://user-images.githubusercontent.com/101006959/235035977-e84e59ef-2e07-495d-af1a-cbad161d8543.png)
 
-I originally copy pasted the exact data seen in the TCP stream as seen above, however after the 3rd line of input, the server just closed the connection and I was unable to recieve any type of shell.
+I originally copy pasted the exact data seen in the TCP stream as seen above, however after the 3rd line of input, the server just closed the connection and I was unable to receive any type of shell.
 
 This confused me a little until I eventually looked at the data closer in wireshark. Some of the bytes that were being sent to the server were unable to be properly represented in ASCII and therefor were just being represented by `.` which is why I was unable to get a shell
 
@@ -215,9 +215,9 @@ I tested my theory out by converting all the dots to `0` and all the dashes to `
 
 From this I began to slowly decode the flag, after I first saw `shctf{` I knew that I was on the right track towards the flag!
 
-During the competition when I solved this challenge, I manually decoded the bytes from Sonic Visualizer. However after the challenge I realized that you could use a morse code audio reader to recieve the data automatically and make this challenge much easier, instead of manually decoding it.
+During the competition when I solved this challenge, I manually decoded the bytes from Sonic Visualizer. However after the challenge I realized that you could use a morse code audio reader to receive the data automatically and make this challenge much easier, instead of manually decoding it.
 
-I used [morsecode.world](https://morsecode.world/international/decoder/audio-decoder-adaptive.html) with the following settings to recieve the data as a string of `E`'s and `T`'s.
+I used [morsecode.world](https://morsecode.world/international/decoder/audio-decoder-adaptive.html) with the following settings to receive the data as a string of `E`'s and `T`'s.
 
 ![image](https://user-images.githubusercontent.com/101006959/235036037-33a14f8f-693e-4210-b016-c6251bdfe48d.png)
 
@@ -233,7 +233,7 @@ Finally I was left with the following binary values, which I could simply use an
 0111001101101000011000110111010001100110011110110100111000110000001000000011000100100000011000110011010001101110001000000100100000110011001101000111001000100000011101010010000000111000001100110011001101010000010111110011100000110000001100000111000000101000010010010110111000101001001000000011110000100000001011110110010001100101011101100010111101101110011101010110110001101100011100110111000001100001011000110110010101111101
 ```
 
-After decoding this string of binary, I recieved the flag below!
+After decoding this string of binary, I received the flag below!
 
 `Flag: shctf{N0 1 c4n H34r u 833P_800p(In) < /dev/nullspace}`
 
@@ -276,9 +276,9 @@ This is where I got stumped again though, the pdf file itself was corrupted and 
 
 Eventually though, I got the idea to retry the process again but using the command `7z x starstream.vhd` to extract the data from the VDH using 7zip instead of binwalk.
 
-This seemed to work similar to binwalk, as I recieved the data again, and recieved a file `data_streams:stream5.zip` which I unzipped and again recieved `stream5.pdf`.
+This seemed to work similar to binwalk, as I extracted the data again, and received a file `data_streams:stream5.zip` which I unzipped and again extracted `stream5.pdf`.
 
-I again typed in the password we recieved earlier and this time I was able to view the full PDF without any corruption in it! The result of the PDF is shown below:
+I again typed in the password we received earlier and this time I was able to view the full PDF without any corruption in it! The result of the PDF is shown below:
 
 ![image](https://user-images.githubusercontent.com/101006959/235036144-33267f99-5b25-4a7a-b7b1-4e89bea03423.png)
 
@@ -299,13 +299,13 @@ For this challenge, we were given a compressed memory dump file.
 #### [](#Files7)File(s):
 - conspiracy_nut.tar.gz
 
-The first thing I did for this challenge was extracted the file and recieved a memory dump file titled `conspiracy_nut.dump`.
+The first thing I did for this challenge was extracted the file and received a memory dump file titled `conspiracy_nut.dump`.
 
 From the description of this challenge we are given a hint, we need to extract a missing image that presumably will have a flag.
 
 For this challenge I used `Volatility 2.5` to extract information from the memory dump in an attempt to find the flag.
 
-One of the first things that I did within Volatility was to check the imageinfo, giving me a little bit of information on the operating system type and some basic hardware information from the system that took this dump.
+One of the first things that I did within Volatility was to check the `imageinfo`, giving me a little bit of information on the operating system type and some basic hardware information from the system that took this dump.
 
 ![image](https://user-images.githubusercontent.com/101006959/235036178-3f615c8e-4e99-472f-aade-20ab3cb0fe14.png)
 
