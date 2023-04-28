@@ -5,7 +5,7 @@ published: true
 
 The following are a list of `Forensics` writeups from this past weekend's `Space Heroes CTF` hosted by Florida Tech!
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035459-1e6f1103-57e6-41e7-a69c-2f8c072b8eda.png)
 
 ### Challenges:
 
@@ -27,7 +27,7 @@ The following are a list of `Forensics` writeups from this past weekend's `Space
 
 ## [](#Time-Leap)Time Leap
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035472-7ff0c788-7452-455a-85a2-0c392c88613e.png)
 
 For this challenge, we were given a singular file, a compressed image of a USB drive.
 
@@ -38,17 +38,17 @@ We can extract the image through the use of either `gunzip convergence.img.gz` o
 
 Once we have extracted the image `convergence.img` we can use Autopsy to open it up and get a better look at what was saved on the USB drive.
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035484-b3a59145-24c9-4fcd-97d6-8a87db5f9825.png)
 
 The first thing we can see is an empty file `$OrphanFiles`, some extracted files `$CarvedFiles` and some unallocated files `$Unalloc`.
 
 Viewing the carved files we can see that many of the files have been deleted, we could take time to scan through those, but the 1 deleted file on the file system caught my eye, so let's check that first.
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035499-fb1110c1-182b-487f-83af-e2f9244996d8.png)
 
 We can see that a file named `flag.gif` was recently deleted, that is most likely the flag we need! We can extract and view the file by right clicking on it, hitting extract, and saving it into a directory of our choice. Once we do this we are met with the following gif of the flag!
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035533-25806e3a-9ea9-4242-833d-ce61e369c65f.png)
 
 `Flag: shctf{th1s_i5_the_wi11_0f_St3in5_G4te}`
 
@@ -56,7 +56,7 @@ We can see that a file named `flag.gif` was recently deleted, that is most likel
 
 ## [](#A-New-Hope)A New Hope
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035561-14164b04-4988-4f57-9d4d-3158a270ea5b.png)
 
 For this challenge, we were given a singular file, a PowerPoint file with a single slide contained within it.
 
@@ -65,17 +65,17 @@ For this challenge, we were given a singular file, a PowerPoint file with a sing
 
 Opening the PowerPoint doesn't give us very much info on where the flag could be hidden, the only slide contains the following picture:
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035577-ed41746a-23b6-436b-9dbc-52ba04a65a23.png)
 
 If we delete the background image and the picture of a droid running, we are greeted with one last image that was hidden behind the slide, however PowerPoint says "The Picture can't be displayed".
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035588-371e0bf6-02d8-49ee-8c07-555be3a46bcc.png)
 
 My next idea was to use binwalk with `binwalk -e A_New_Hope.pptx` in order to extract all the images and data from the PowerPoint in order to get a better idea of what this hidden image could be.
 
 After extracting it, I went to `./_A_New_Hope.pptx.extracted/ppt/media` and we can see the three images from the powerpoint.
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035609-4ef30a49-8035-437c-94c6-e9e52eaf9ba7.png)
 
 `image2.jpeg` and `image3.png` are the two images that we could see from the PowerPoint slide and open without any error, however `image1.png` seems to be corrupted and cannot be displayed.
 
@@ -87,7 +87,7 @@ Viewing the file header bytes, we can see the first 4 bytes are `00 00 FF E0`, w
 
 Once we do this and save the file with a `.jpg` file extension, the file successfully opens and we are greeted with the following flag!
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035739-fdde6db2-7e89-4837-8d8a-c77ae667c319.png)
 
 `Flag: shctf{help_m3_ob1_y0u're_my_0n1y_hope}`
 
@@ -95,7 +95,7 @@ Once we do this and save the file with a `.jpg` file extension, the file success
 
 ## [](#Félicette)Félicette
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035768-98ccb3f0-5a8b-4c29-82ca-d3a7354f0d05.png)
 
 For this challenge, we were given a packet capture file that we can view within Wireshark.
 
@@ -104,7 +104,7 @@ For this challenge, we were given a packet capture file that we can view within 
 
 Opening the pcap file we can see there there are thousands of ICMP packets, and no other packet types.
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035783-89dd2398-fc93-4831-bff3-46ae89a99d3d.png)
 
 There is no data stream for us to view in Wireshark, so I started going through the packets 1 by 1 to see if I could get any idea of where the flag could be. I quickly picked up that the only 2 fields that were changing was the `Data` field, as well as the `Checksum` field.
 
@@ -132,7 +132,7 @@ The first section of this we have already covered, we use `tshark` to extract th
 
 The final part of this command is just for ease of use, `; feh flag.jpg` will just end the previous string of commands, and open the file for viewing after all the extractions & conversions have been complete, after this runs we are greeted with the image below containing the flag!
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035856-263d03c8-5d88-45a8-a4c3-50f97932b677.png)
 
 `Flag: summitCTF{look_at_da_kitty}`
 
@@ -140,7 +140,7 @@ The final part of this command is just for ease of use, `; feh flag.jpg` will ju
 
 ## [](#Brainiac)Brainiac
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035879-71fd2d73-b33f-4f97-9758-c947070e7b40.png)
 
 For this challenge, we were given a packet capture file that we can view within Wireshark.
 
@@ -149,23 +149,23 @@ For this challenge, we were given a packet capture file that we can view within 
 
 Opening the pcap file we can see there there are multiple different types of packet protocols, the majority of them being TCP packets.
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035897-13657c30-f550-4342-b78f-bc1d89bb476b.png)
 
 Viewing the TCP streams, on the very first stream (Stream 0) we can see some peculiar data that looks like someone connecting to a server and successfully getting a shell:
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035913-27ff9fdf-e34e-4324-bc20-b9bf722d69c3.png)
 
 I searched through the rest of the streams and also attempted to search the file for the string `shctf{` to see if the flag was in there, but had no luck.
 
 After some thinking I decided to check if we were also able to access the server shown in the TCP stream, using the ip `165.227.210.30` and port `16306` we were successfully able connect to the server and recieved the following screen!
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035977-e84e59ef-2e07-495d-af1a-cbad161d8543.png)
 
 I originally copy pasted the exact data seen in the TCP stream as seen above, however after the 3rd line of input, the server just closed the connection and I was unable to recieve any type of shell.
 
 This confused me a little until I eventually looked at the data closer in wireshark. Some of the bytes that were being sent to the server were unable to be properly represented in ASCII and therefor were just being represented by `.` which is why I was unable to get a shell
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235035959-1ff4abc3-2123-4707-9508-3259ef011e81.png)
 
 My next idea was to take these expected hex data, and write a python script using pwntools to send the exact hex bytes expected to the server. Below is the script that I wrote:
 
@@ -192,7 +192,7 @@ Once the script was done, I ran it and the response from the server was the flag
 
 ## [](#My-God,-it's-full-of-.--...--.-.-..-..)My God, it's full of .- ... -.-. .. ..
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036004-580f4b13-ffc5-403a-ae82-c4b35b362139.png)
 
 For this challenge, we were given a waveform audio file and a hint in the title of morse code.
 
@@ -205,7 +205,7 @@ When playing the `signal.wav` file, we can hear primarilly what sounds like stat
 
 My first idea was to use Sonic Visualizer to view the freqencies of the noises, and I did this by opening up the audio file in Sonic Visualizer, going to `layer > add peak frequency spectrogram` and was able to view the following at the start of the audio:
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036020-89a22fe5-9121-42e6-a6fc-bdf6eda2f755.png)
 
 From this I started typing out the dots and dashes of morse code by hand into a morse code decoder, but after 3-4 "blocks" of them, I realized I was unable to make out any ASCII letters at all, let alone a flag.
 
@@ -219,7 +219,7 @@ During the competition when I solved this challenge, I manually decoded the byte
 
 I used [morsecode.world](https://morsecode.world/international/decoder/audio-decoder-adaptive.html) with the following settings to recieve the data as a string of `E`'s and `T`'s.
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036037-33a14f8f-693e-4210-b016-c6251bdfe48d.png)
 
 after this I used some bash string formatting with `sed` and `tr` to change the letters from E & T to binary so that I could decode them.
 
@@ -237,7 +237,7 @@ After decoding this string of binary, I recieved the flag below!
 
 ## [](#space_stream)space_stream
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036048-d2f818ae-6fe5-4b69-808e-e79554d45adc.png)
 
 For this challenge, we were given a Virtual Hard Disk file (VDH).
 
@@ -248,7 +248,7 @@ Seeing that we were given a VHD file, the first thing I did was open the file in
 
 Searching through the drive, we can see a directory titled `data_streams` which contains jpg files titled stream 1-4:
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036073-b6dc1d23-dba7-4aa7-b3f5-01554b6dbfcf.png)
 
 Most of these streams seem to be just pictures of maps from StarCraft, however the file titled `stream1.jpg:sarah_kerrigan` gives us a hint with the text in the file saying `I should stop using my name as password. Maybe I can just hide my file, they will never find it.`
 
@@ -258,11 +258,11 @@ I tried looking all throughout the drive for any other hints or a flag but ended
 
 One hint I did find was a logfile titled `$LogFile` which was located at the root of volume 4 of the drive. In this file I found hints at a 5th stream `stream5.pdf` however I was unable to find any other traces of that file anywhere else on the operating system.
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036121-34a38d08-6da2-49a0-a0f2-7d8ee529b964.png)
 
 I eventually ran out of ideas for looking through autopsy and felt stumped, that is when I thought of possibly using binwalk to see if it could extract any extra files that I could not see before.
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036133-1e3785bf-b233-481b-9dd0-3c41a02c4e96.png)
 
 As we can see from the image above, binwalk shows us a file `stream5.pdf` that was hidden and unable to view from autopsy!
 
@@ -276,7 +276,7 @@ This seemed to work similar to binwalk, as I recieved the data again, and reciev
 
 I again typed in the password we recieved earlier and this time I was able to view the full PDF without any corruption in it! The result of the PDF is shown below:
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036144-33267f99-5b25-4a7a-b7b1-4e89bea03423.png)
 
 I successfully managed to extract the flag from the PDF!
 
@@ -288,7 +288,7 @@ I successfully managed to extract the flag from the PDF!
 
 ## [](#conspiracy-nut)conspiracy nut
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036157-2a4ecff9-3c72-4720-a456-fb8ecf0d06e5.png)
 
 For this challenge, we were given a compressed memory dump file.
 
@@ -303,7 +303,7 @@ For this challenge I used `Volatility 2.5` to extract information from the memor
 
 One of the first things that I did within Volatility was to check the imageinfo, giving me a little bit of information on the operating system type and some basic hardware information from the system that took this dump.
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036178-3f615c8e-4e99-472f-aade-20ab3cb0fe14.png)
 
 I used the profile `Win7SP0x64` for the rest of this challenge since it was the first suggested profile that Volatility gave me. From this we know that we are dealing with a Windows x64 system.
 
@@ -311,13 +311,13 @@ The next thing I tried was running a filescan on the dump and using grep to look
 
 After some trial and error and some dead ends, I eventually decided to try running strings on the dump and again using grep to look for the word `flag`. This had a large amount of results since the word flag is often used in programs and configuration files, however I noticed some interesting ips that ended in `/flag.jpg`.
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036215-a77bbeb3-f3a1-4c51-b249-517ac9066686.png)
 
 After I found this I knew 2 things about the flag on the system: 1 that it was likely a `.jpg` file format, and 2 that it likely came from the a web-server with the ip / port of `http://57.135.219.202:9000/`.
 
 Knowing this information I tried running a network scan on the memory dump to see if I could get any information about the ip that was listed next to `flag.jpg` and found out that it was opened in the firefox browser:
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036235-737fd47d-c3e6-4206-ac1f-2e518aa47591.png)
 
 I tried to use the `memdump` command on the process ID `1936` however after some failed attempts I was unable to use this method to extract any sort of flag file or even a .jpg file.
 
@@ -325,13 +325,13 @@ I have to say I was a little stumped here for some time, I tried extracting data
 
 Eventually, I thought of the idea of running a filescan on the system and using grep to search for an extention of `.jpg` instead of the word flag, this time I had a few hits, but none of them had extremely obvious names such as `flag.jpg`.
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036269-6714b2d2-4403-4065-99a6-fc26528c38ef.png)
 
 One file that seemed a little odd though was `TranscodedWallpaper.jpg`. This file was seen twice on the drive, both under the user `tinfoil`. I knew this user had to be a hint but was not certain if the file was correct or not, it was worth a try though.
 
 I used this information I obtained and used the `dumpfiles` command with the physical offset given to me by the previous command.
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036280-7ab28f10-4dfc-4f06-b469-9ef0214c4334.png)
 
 The file I was returned with had a `.dat` extention, however viewing the file in a hex editor we can see that the header coorespond to the expected header of a jpg file, that being the bytes `FF D8`.
 
@@ -341,7 +341,7 @@ With the information gathered regarding the header of the file, I figured it was
 
 I changed the file name to `TranscodedWallpaper.jpg` and opened the file, and to my luck it opened and showed the following image!
 
-*****INSERT IMAGE HERE**********INSERT IMAGE HERE*****
+![image](https://user-images.githubusercontent.com/101006959/235036397-c6f050a1-5191-42e9-883f-0696cf673d91.png)
 
 While the file is clearly corrupted somewhat towards the bottom of the image, it still is able to be opened and we can see a flag at the bottom of the whiteboard!
 
