@@ -9,15 +9,15 @@ The following are a list of `Forensics` writeups from this past weekend's `Space
 
 ### Challenges:
 
-[Time Leap](#Time-Leap)
+[Time Leap](#time-leap)
 
-[A New Hope](#A-New-Hope)
+[A New Hope](#a-new-hope)
 
-[Félicette](#Félicette)
+[Félicette](#félicette)
 
-[Brainiac](#Brainiac)
+[Brainiac](#brainiac)
 
-[My God, it's full of .- ... -.-. .. ..](#My-God-its-full-of)
+[My God, it's full of .- ... -.-. .. ..](#my-god-its-full-of)
 
 [space_stream](#space_stream)
 
