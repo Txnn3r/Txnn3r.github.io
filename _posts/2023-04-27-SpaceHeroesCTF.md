@@ -17,7 +17,7 @@ The following are a list of `Forensics` writeups from this past weekend's `Space
 
 [Brainiac](#Brainiac)
 
-[My God, it's full of .- ... -.-. .. ..](#my-god-its-full-of--------)
+[My God, it's full of .- ... -.-. .. ..](#My-God,-it's-full-of-.--...--.-.-..-..)
 
 [space_stream](#space_stream)
 
