@@ -327,7 +327,7 @@ I tried to use the `memdump` command on the process ID `1936` however after some
 
 I have to say I was a little stumped here for some time, I tried extracting data from other processes that seemed suspicious to me such as `wmplayer.exe` and `notepad.exe` however each of those came up in deadends and left me with more questions than answers.
 
-Eventually, I thought of the idea of running a filescan on the system and using grep to search for an extention of `.jpg` instead of the word flag, this time I had a few hits, but none of them had extremely obvious names such as `flag.jpg`.
+Eventually, I thought of the idea of running a filescan on the system and using grep to search for an extension of `.jpg` instead of the word flag, this time I had a few hits, but none of them had extremely obvious names such as `flag.jpg`.
 
 ![image](https://user-images.githubusercontent.com/101006959/235036269-6714b2d2-4403-4065-99a6-fc26528c38ef.png)
 
@@ -337,9 +337,9 @@ I used this information I obtained and used the `dumpfiles` command with the phy
 
 ![image](https://user-images.githubusercontent.com/101006959/235036280-7ab28f10-4dfc-4f06-b469-9ef0214c4334.png)
 
-The file I was returned with had a `.dat` extention, however viewing the file in a hex editor we can see that the header coorespond to the expected header of a jpg file, that being the bytes `FF D8`.
+The file I was returned with had a `.dat` extension, however viewing the file in a hex editor we can see that the header corresponded to the expected header of a jpg file, that being the bytes `FF D8`.
 
-I checked the trailer of the file and it was bytes `94 ED` which did not coorespond to the expected trailer of `FF D9`, however based on the header information, I was sure this was supposed to be a jpeg file.
+I checked the trailer of the file and it was bytes `94 ED` which did not correspond to the expected trailer of `FF D9`, however based on the header information, I was sure this was supposed to be a jpeg file.
 
 With the information gathered regarding the header of the file, I figured it was a worth a shot to change the extension and at least attempt to open the jpeg, it may be corrupted, but if it opened I could still possibly use that to get some information or even get the flag!
 
