@@ -157,7 +157,7 @@ Viewing the TCP streams, on the very first stream (Stream 0) we can see some pec
 
 I searched through the rest of the streams and also attempted to search the file for the string `shctf{` to see if the flag was in there, but had no luck.
 
-After some thinking I decided to check if we were also able to access the server shown in the TCP stream, using the ip `165.227.210.30` and port `16306` we were successfully able connect to the server and received the following screen!
+After some thinking I decided to check if we were also able to access the server shown in the TCP stream, using the ip `165.227.210.30` and port `16306` we were successfully able connect to the server and received the following screen:
 
 ![image](https://user-images.githubusercontent.com/101006959/235035977-e84e59ef-2e07-495d-af1a-cbad161d8543.png)
 
@@ -276,7 +276,7 @@ This is where I got stumped again though, the pdf file itself was corrupted and 
 
 Eventually though, I got the idea to retry the process again but using the command `7z x starstream.vhd` to extract the data from the VDH using 7zip instead of binwalk.
 
-This seemed to work similar to binwalk, as I extracted the data again, and received a file `data_streams:stream5.zip` which I unzipped and again extracted `stream5.pdf`.
+This seemed to work similar to binwalk, as I extracted the data again, and received a file `data_streams:stream5.zip` which I unzipped with `unzip data_streams:stream5.zip`,and again extracted `stream5.pdf`.
 
 I again typed in the password we received earlier and this time I was able to view the full PDF without any corruption in it! The result of the PDF is shown below:
 
@@ -305,13 +305,13 @@ From the description of this challenge we are given a hint, we need to extract a
 
 For this challenge I used `Volatility 2.5` to extract information from the memory dump in an attempt to find the flag.
 
-One of the first things that I did within Volatility was to check the `imageinfo`, giving me a little bit of information on the operating system type and some basic hardware information from the system that took this dump.
+One of the first things that I did within Volatility was to check the `imageinfo`, giving me a little bit of information on the operating system type and some basic hardware information from the system that took this memory dump.
 
 ![image](https://user-images.githubusercontent.com/101006959/235036178-3f615c8e-4e99-472f-aade-20ab3cb0fe14.png)
 
 I used the profile `Win7SP0x64` for the rest of this challenge since it was the first suggested profile that Volatility gave me. From this we know that we are dealing with a Windows x64 system.
 
-The next thing I tried was running a filescan on the dump and using grep to look for the word `flag`. However no files with that word came up, so I went back to the drawing board.
+The next thing I tried was running a filescan on the memory dump and using grep to look for the word `flag`. However no files with that word came up, so I went back to the drawing board.
 
 After some trial and error and some dead ends, I eventually decided to try running strings on the dump and again using grep to look for the word `flag`. This had a large amount of results since the word flag is often used in programs and configuration files, however I noticed some interesting ips that ended in `/flag.jpg`.
 
