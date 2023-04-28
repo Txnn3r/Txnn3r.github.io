@@ -112,7 +112,7 @@ My first thought was to use `tshark` to extract all the packets from the data fi
 
 ```tshark -r chall.jpg.pcap -Y icmp -T fields -e data.data```
 
-From this the first thing I noticed was the file trailer (since the last result is the first thing I in the terminal). `FF D9`, which I immediately knew was the end of a jpeg file (which was also in the name of the pcap!).
+From this the first thing I noticed was the file trailer (since the last result is the first thing I in the terminal). `FF D9`, which I immediately knew was the end of a jpeg file (which was also in the name of the pcap).
 
 My next step was to check the first few bytes of data to see if the expected header of `FF D8` was there, or if I would have to do some file carving, I did this by running the same command as before, just piped into the `head` command as seen below:
 
@@ -163,7 +163,7 @@ After some thinking I decided to check if we were also able to access the server
 
 I originally copy pasted the exact data seen in the TCP stream as seen above, however after the 3rd line of input, the server just closed the connection and I was unable to receive any type of shell.
 
-This confused me a little until I eventually looked at the data closer in Wireshark. Some of the bytes that were being sent to the server were unable to be properly represented in ASCII and therefor were just being represented by `.` which is why I was unable to get a shell
+This confused me a little until I eventually looked at the data closer in Wireshark. Some of the bytes that were being sent to the server were unable to be properly represented in ASCII and therefor were just being represented by `.` which is why I was unable to get a shell.
 
 ![image](https://user-images.githubusercontent.com/101006959/235035959-1ff4abc3-2123-4707-9508-3259ef011e81.png)
 
@@ -254,7 +254,7 @@ Searching through the drive, we can see a directory titled `data_streams` which 
 
 ![image](https://user-images.githubusercontent.com/101006959/235036073-b6dc1d23-dba7-4aa7-b3f5-01554b6dbfcf.png)
 
-Most of these streams seem to be just pictures of maps from StarCraft, however the file titled `stream1.jpg:sarah_kerrigan` gives us a hint with the text in the file saying `I should stop using my name as password. Maybe I can just hide my file, they will never find it.`
+Most of these streams seem to be just pictures of maps from StarCraft however, the file titled `stream1.jpg:sarah_kerrigan` gives us a hint with the text in the file saying `I should stop using my name as password. Maybe I can just hide my file, they will never find it.`
 
 From this we can assume that the password: `sarah_kerrigan` may be useful, so let's save that for later.
 
@@ -264,11 +264,11 @@ One hint I did find was a logfile titled `$LogFile` which was located at the roo
 
 ![image](https://user-images.githubusercontent.com/101006959/235036121-34a38d08-6da2-49a0-a0f2-7d8ee529b964.png)
 
-I eventually ran out of ideas for looking through autopsy and felt stumped, that is when I thought of possibly using binwalk to see if it could extract any extra files that I could not see before.
+I eventually ran out of ideas for looking through Autopsy and felt stumped, that is when I thought of possibly using binwalk to see if it could extract any extra files that I could not see before.
 
 ![image](https://user-images.githubusercontent.com/101006959/235036133-1e3785bf-b233-481b-9dd0-3c41a02c4e96.png)
 
-As we can see from the image above, binwalk shows us a file `stream5.pdf` that was hidden and unable to view from autopsy!
+As we can see from the image above, binwalk shows us a file `stream5.pdf` that was hidden and unable to view from Autopsy!
 
 From this I extracted the data and attempted to extract the `stream5.pdf` file. I successfully managed to find the file hidden within `starstream.vhd`, it was protected with a password so I used the password `sarah_kerrigan` that we obtained before to open it.
 
