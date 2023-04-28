@@ -31,7 +31,7 @@ The following are a list of `Forensics` writeups from this past weekend's `Space
 
 For this challenge, we were given a singular file, a compressed image of a USB drive.
 
-##### [](#Files1)File(s):
+#### [](#Files1)File(s):
 - convergence.img.gz
 
 We can extract the image through the use of either `gunzip convergence.img.gz` on Linux, or by using `WinRAR` on Windows.
