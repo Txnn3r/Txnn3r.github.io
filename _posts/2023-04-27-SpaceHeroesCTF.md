@@ -3,7 +3,7 @@ title: Space Heroes CTF
 published: true
 ---
 
-The following are a list of `Forensics` writeups from this past weekend's `Space Heroes CTF` hosted by Florida Tech!
+The following are a list of `Forensics` writeups I completed after competing in this past weekend's `Space Heroes CTF` hosted by Florida Tech!
 
 ![image](https://user-images.githubusercontent.com/101006959/235035459-1e6f1103-57e6-41e7-a69c-2f8c072b8eda.png)
 
