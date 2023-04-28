@@ -73,7 +73,7 @@ If we delete the background image and the picture of a droid running, we are gre
 
 My next idea was to use binwalk with `binwalk -e A_New_Hope.pptx` in order to extract all the images and data from the PowerPoint in order to get a better idea of what this hidden image could be.
 
-After extracting it, I went to `./_A_New_Hope.pptx.extracted/ppt/media` and we can see the three images from the powerpoint.
+After extracting it, I went to `./_A_New_Hope.pptx.extracted/ppt/media` and we can see the three images from the PowerPoint.
 
 ![image](https://user-images.githubusercontent.com/101006959/235035609-4ef30a49-8035-437c-94c6-e9e52eaf9ba7.png)
 
@@ -102,7 +102,7 @@ For this challenge, we were given a packet capture file that we can view within 
 #### [](#Files3)File(s):
 - chall.jpg.pcap
 
-Opening the pcap file we can see there there are thousands of ICMP packets, and no other packet types.
+Opening the pcap file we can see there are thousands of ICMP packets, and no other packet types.
 
 ![image](https://user-images.githubusercontent.com/101006959/235035783-89dd2398-fc93-4831-bff3-46ae89a99d3d.png)
 
@@ -112,7 +112,7 @@ My first thought was to use `tshark` to extract all the packets from the data fi
 
 ```tshark -r chall.jpg.pcap -Y icmp -T fields -e data.data```
 
-From this the first thing I noticed was the file trailer (since the last result is the first thing I in the terminal). `FF D9`, which I immediatly knew was the end of a jpeg file (which was also in the name of the pcap!).
+From this the first thing I noticed was the file trailer (since the last result is the first thing I in the terminal). `FF D9`, which I immediately knew was the end of a jpeg file (which was also in the name of the pcap!).
 
 My next step was to check the first few bytes of data to see if the expected header of `FF D8` was there, or if I would have to do some file carving, I did this by running the same command as before, just piped into the `head` command as seen below:
 
@@ -147,7 +147,7 @@ For this challenge, we were given a packet capture file that we can view within 
 #### [](#Files4)File(s):
 - exploit.pcap
 
-Opening the pcap file we can see there there are multiple different types of packet protocols, the majority of them being TCP packets.
+Opening the pcap file we can see there are multiple different types of packet protocols, the majority of them being TCP packets.
 
 ![image](https://user-images.githubusercontent.com/101006959/235035897-13657c30-f550-4342-b78f-bc1d89bb476b.png)
 
@@ -163,7 +163,7 @@ After some thinking I decided to check if we were also able to access the server
 
 I originally copy pasted the exact data seen in the TCP stream as seen above, however after the 3rd line of input, the server just closed the connection and I was unable to receive any type of shell.
 
-This confused me a little until I eventually looked at the data closer in wireshark. Some of the bytes that were being sent to the server were unable to be properly represented in ASCII and therefor were just being represented by `.` which is why I was unable to get a shell
+This confused me a little until I eventually looked at the data closer in Wireshark. Some of the bytes that were being sent to the server were unable to be properly represented in ASCII and therefor were just being represented by `.` which is why I was unable to get a shell
 
 ![image](https://user-images.githubusercontent.com/101006959/235035959-1ff4abc3-2123-4707-9508-3259ef011e81.png)
 
@@ -182,7 +182,7 @@ r.sendline(bytes.fromhex('63617420666C61672E747874')) #cat flag.txt
 r.interactive()
 ```
 
-This script takes each of the hex values that I extracted from wireshark and 1 by 1 sends them to the server after the expected `>>>` characters. The final 2 lines are used to view the contents of the flag.txt file with `cat flag.txt` encoded as hex (not necessary, but still works), then `r.interactive()` to view the output of the flag from the server.
+This script takes each of the hex values that I extracted from Wireshark and 1 by 1 sends them to the server after the expected `>>>` characters. The final 2 lines are used to view the contents of the flag.txt file with `cat flag.txt` encoded as hex (not necessary, but still works), then `r.interactive()` to view the output of the flag from the server.
 
 Once the script was done, I ran it and the response from the server was the flag below!
 
@@ -201,9 +201,9 @@ For this challenge, we were given a waveform audio file and a hint in the title 
 
 From the title we have `.- ... -.-. .. ..` which when decoded ends up being morse code for `ASCII`. From this we can assume there is some type of ASCII data hidden within the audio file.
 
-When playing the `signal.wav` file, we can hear primarilly what sounds like static, however if we turn the volume up we can hear distinct beeps in the background that sound like they could be morse code spelling out something!
+When playing the `signal.wav` file, we can hear primarily what sounds like static, however if we turn the volume up we can hear distinct beeps in the background that sound like they could be morse code spelling out something!
 
-My first idea was to use Sonic Visualizer to view the freqencies of the noises, and I did this by opening up the audio file in Sonic Visualizer, going to `layer > add peak frequency spectrogram` and was able to view the following at the start of the audio:
+My first idea was to use Sonic Visualizer to view the frequencies of the noises, and I did this by opening up the audio file in Sonic Visualizer, going to `layer > add peak frequency spectrogram` and was able to view the following at the start of the audio:
 
 ![image](https://user-images.githubusercontent.com/101006959/235036020-89a22fe5-9121-42e6-a6fc-bdf6eda2f755.png)
 
@@ -211,7 +211,7 @@ From this I started typing out the dots and dashes of morse code by hand into a 
 
 I quickly realized that these "blocks" all contained 8 different dots or dashes, which made me think that they could be an 8 bit binary number.
 
-I tested my theory out by converting all the dots to `0` and all the dashes to `1`. Dots being the shorter waveforms in the imave above and dashes being the longer ones.
+I tested my theory out by converting all the dots to `0` and all the dashes to `1`. Dots being the shorter waveforms in the image above and dashes being the longer ones.
 
 From this I began to slowly decode the flag, after I first saw `shctf{` I knew that I was on the right track towards the flag!
 
@@ -227,7 +227,7 @@ after this I used some bash string formatting with `sed` and `tr` to change the 
 echo "E T T T E E T T E T T E T E E E E T T E E E T T E T T T E T E E E T T E E T T E E T T T T E T T E T E E T T T E E E T T E E E E E E T E E E E E E E T T E E E T E E T E E E E E E T T E E E T T E E T T E T E E E T T E T T T E E E T E E E E E E T E E T E E E E E T T E E T T E E T T E T E E E T T T E E T E E E T E E E E E E T T T E T E T E E T E E E E E E E T T T E E E E E T T E E T T E E T T E E T T E T E T E E E E E T E T T T T T E E T T T E E E E E T T E E E E E E T T E E E E E T T T E E E E E E T E T E E E E T E E T E E T E T T E T T T E E E T E T E E T E E T E E E E E E E T T T T E E E E T E E E E E E E T E T T T T E T T E E T E E E T T E E T E T E T T T E T T E E E T E T T T T E T T E T T T E E T T T E T E T E T T E T T E E E T T E T T E E E T T T E E T T E T T T E E E E E T T E E E E T E T T E E E T T E T T E E T E T E T T T T T E T" | sed 's/ //g' | tr "ET" "01"
 ```
 
-Finally I was left with the following binary values, which I could simply use an online decoder to convert to the flag:
+Finally, I was left with the following binary values, which I could simply use an online decoder to convert to the flag:
 
 ```
 0111001101101000011000110111010001100110011110110100111000110000001000000011000100100000011000110011010001101110001000000100100000110011001101000111001000100000011101010010000000111000001100110011001101010000010111110011100000110000001100000111000000101000010010010110111000101001001000000011110000100000001011110110010001100101011101100010111101101110011101010110110001101100011100110111000001100001011000110110010101111101
@@ -258,7 +258,7 @@ Most of these streams seem to be just pictures of maps from StarCraft, however t
 
 From this we can assume that the password: `sarah_kerrigan` may be useful, so let's save that for later.
 
-I tried looking all throughout the drive for any other hints or a flag but ended up finding nothing. I then went on to trying to look for steganography in any of the 4 images of starcraft maps from above, however that didn't yeild anything valueable either.
+I tried looking all throughout the drive for any other hints or a flag but ended up finding nothing. I then went on to trying to look for steganography in any of the 4 images of StarCraft maps from above, however that didn't yield anything valuable either.
 
 One hint I did find was a logfile titled `$LogFile` which was located at the root of volume 4 of the drive. In this file I found hints at a 5th stream `stream5.pdf` however I was unable to find any other traces of that file anywhere else on the operating system.
 
