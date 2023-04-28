@@ -327,7 +327,7 @@ Eventually, I thought of the idea of running a filescan on the system and using 
 
 ![image](https://user-images.githubusercontent.com/101006959/235036269-6714b2d2-4403-4065-99a6-fc26528c38ef.png)
 
-One file that seemed a little odd though was `TranscodedWallpaper.jpg`. This file was seen twice on the drive, both under the user `tinfoil`. I knew this user had to be a hint but was not certain if the file was correct or not, it was worth a try though.
+One file that seemed a little odd though was `TranscodedWallpaper.jpg`. This file was seen twice on the drive, both under the user `tinfoil`. I knew this user had to be a hint based on the title of the challenge but was not certain if the file was correct or not, it was worth a try though.
 
 I used this information I obtained and used the `dumpfiles` command with the physical offset given to me by the previous command.
 
